@@ -1,3 +1,4 @@
+@import url(font-awesome.min.css);
 :root {
     font-size: 12px;
     --container-width:1350px;
@@ -9,14 +10,36 @@
     --superWhite: white;
     --principal-color: rgb(185, 177, 120);
 }
-
+.allDetails{
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0, 0, 0,.8);
+    color: white;
+    width: 100vw;
+    height: 92vh;
+}
+.allDetails.display{
+    display: flex;
+}
+.textDetails{
+    width: 50%;
+    height: 70%;
+    border: solid gray 1px;
+    background-color: var(--principal-color);
+    padding: 20px;
+}
+.crossClose{
+    float: right;
+}
 .template-main {
     background-image: url(/font/background\ img.jpg);
     background-repeat: no-repeat;
     position: absolute;
     width: 100%;
 }
-
 
 /* the super title */
 
@@ -66,7 +89,7 @@
     width: 240px;
     height: 320px;
     border: red 3px solid;
-    bottom: 0;
+    
 }
 .firstFighter h3, .secondFighter h3{
     padding: 5px 0;
