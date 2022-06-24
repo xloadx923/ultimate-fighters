@@ -7,13 +7,20 @@ async function waitingForResponse() {
     displayHeroes(todoList);
 }
 function displayFighter(fighter,hero){
+    document.querySelector(fighter).firstElementChild.innerText = hero.name;
     document.querySelector(fighter).style= `background: url(${hero.images.lg}) no-repeat;background-size: contain;`;
 }
 function displayStats(nameDetail,hero){
 
     document.querySelector(nameDetail).innerText = "";
     const stats = document.createElement('div');
-    stats.innerHTML = hero.powerstats.speed;
+    stats.innerHTML += `<p>Life :${hero.powerstats.life}</p>`;
+    stats.innerHTML += `<p>Shield :${hero.powerstats.shield}</p>`;
+    stats.innerHTML += `<p>Intelligence :${hero.powerstats.intelligence}</p>`;
+    stats.innerHTML += `<p>Strength :${hero.powerstats.strength}</p>`;
+    stats.innerHTML += `<p>Durability :${hero.powerstats.durability}</p>`;
+    stats.innerHTML += `<p>Power :${hero.powerstats.power}</p>`;
+    stats.innerHTML += `<p>Combat :${hero.powerstats.combat}</p>`;
     document.querySelector(nameDetail).appendChild(stats);
 }
 
@@ -21,6 +28,8 @@ function displayHeroes(todoList){
     // console.log(todoList[0]['name'],todoList[0]['appearance']['eyeColor']);
     todoList.forEach(hero => {
         // console.log(hero)
+        hero.powerstats.life = 100;
+        hero.powerstats.shield = getRandomNumber(10,30);
         heroes.push(hero);
     });
     heroes.forEach(hero => {
@@ -38,11 +47,11 @@ function displayHeroes(todoList){
         heroDetail.addEventListener('click',function(event){
             if(document.getElementById('fighter1').checked){
                 displayFighter('.firstFighter',hero);
-                // displayStats('.statsDetail1',hero);
+                displayStats('.combatScene1',hero);
             }
             if(document.getElementById('fighter2').checked){
                 displayFighter('.secondFighter',hero);
-                // displayStats('.statsDetail2',hero);
+                displayStats('.combatScene2',hero);
             }
 
             console.log(hero.name)
@@ -62,4 +71,10 @@ function changeFighter(){
         if(this.checked) document.getElementById('fighter1').checked = false;
     });
 
+}
+
+function getRandomNumber(min, max){
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min);
 }
