@@ -89,7 +89,7 @@
     width: 240px;
     height: 320px;
     border: red 3px solid;
-    
+    background: url(../img/fighter1.gif) no-repeat;
 }
 .firstFighter h3, .secondFighter h3{
     padding: 5px 0;
@@ -103,6 +103,7 @@
     width: 240px;
     height: 320px;
     border: rgb(0, 47, 255) 3px solid;
+    background: url(../img/fighter2.gif) no-repeat;
 }
 
 .logCombat {

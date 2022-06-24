@@ -32,8 +32,10 @@ function closeDetails(){
 function displayFighter(fighter,hero){
     document.querySelector(fighter).firstElementChild.innerText = hero.name;
     document.querySelector(fighter).style= `background: url(${hero.images.lg}) no-repeat;background-size: contain;`;
-    document.querySelector(fighter).addEventListener('click',function(){ document.querySelector('.allDetails').classList.toggle('display'); });
-    displayStats('.textDetails',hero);
+    document.querySelector(fighter).addEventListener('click',function(){
+        document.querySelector('.allDetails').classList.toggle('display');
+        displayStats('.textDetails',hero);
+    });
 }
 
 function displayStats(nameDetail,hero){
