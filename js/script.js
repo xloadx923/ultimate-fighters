@@ -7,7 +7,7 @@ async function waitingForResponse() {
     displayHeroes(todoList);
 }
 function displayFighter(fighter,hero){
-    document.querySelector(fighter).style= `background: url(${hero.images.lg})no-repeat;background-size: contain;`;
+    document.querySelector(fighter).style= `background: url(${hero.images.lg}) no-repeat;background-size: contain;`;
 }
 function displayStats(nameDetail,hero){
 
@@ -36,13 +36,13 @@ function displayHeroes(todoList){
         changeFighter();
 
         heroDetail.addEventListener('click',function(event){
-            if(document.query('fighter1').checked){
-                displayFighter('.fighter1',hero);
-                displayStats('.statsDetail1',hero);
+            if(document.getElementById('fighter1').checked){
+                displayFighter('.firstFighter',hero);
+                // displayStats('.statsDetail1',hero);
             }
-            if(document.query('fighter2').checked){
-                displayFighter('.fighter2',hero);
-                displayStats('.statsDetail2',hero);
+            if(document.getElementById('fighter2').checked){
+                displayFighter('.secondFighter',hero);
+                // displayStats('.statsDetail2',hero);
             }
 
             console.log(hero.name)
@@ -51,13 +51,14 @@ function displayHeroes(todoList){
     });
 }
 // console.log(heroes)
+
 waitingForResponse();
 function changeFighter(){
 
-    document.querySelector('.firstFighter').addEventListener('change',function(){
+    document.getElementById('fighter1').addEventListener('change',function(){
         if(this.checked) document.getElementById('fighter2').checked = false;
     });
-    document.querySelector('.secondFighter').addEventListener('change',function(){
+    document.getElementById('fighter2').addEventListener('change',function(){
         if(this.checked) document.getElementById('fighter1').checked = false;
     });
 
