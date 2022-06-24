@@ -51,7 +51,7 @@
 .fightScene {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
+    gap: 5px;
     grid-auto-rows: minmax(100px, auto);
 }
 
@@ -63,8 +63,8 @@
 .firstFighter {
     grid-column: 1;
     grid-row: 1 / 4 ;
-    width: 100%;
-    height: 100%;
+    width: 240px;
+    height: 320px;
     border: red 3px solid;
 }
 .firstFighter h3, .secondFighter h3{
@@ -74,11 +74,11 @@
     color: white;
 }
 .secondFighter {
-    border: rgb(0, 47, 255) 3px solid;
     grid-column: 4;
     grid-row: 1 / 4 ;
-    width: 100%;
-    height: 100%;
+    width: 240px;
+    height: 320px;
+    border: rgb(0, 47, 255) 3px solid;
 }
 
 .logCombat {
