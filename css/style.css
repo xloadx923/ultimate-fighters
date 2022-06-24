@@ -119,7 +119,11 @@
 /* List of characters */
 
 .heroesList {
-    overflow: scroll;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    overflow-y: auto;
     width: auto;
     height: 1000px;
 }
@@ -128,4 +132,21 @@
     display: flex;
     justify-content: center;
     font-size: 2rem;
+}
+
+.heroesList .heroes{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(9, 240px);
+    height: 520px;
+    overflow-y: auto;
+    background: green;
+}
+
+.heroes button, .heroes img{
+    width: 100%;
+    height: auto;
+}
+.heroes img:hover{
+    opacity: 0.3;
 }

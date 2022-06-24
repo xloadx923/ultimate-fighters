@@ -54,10 +54,10 @@ function displayHeroes(todoList){
 waitingForResponse();
 function changeFighter(){
 
-    document.querySelector('#fighter1').addEventListener('change',function(){
+    document.querySelector('.firstFighter').addEventListener('change',function(){
         if(this.checked) document.getElementById('fighter2').checked = false;
     });
-    document.querySelector('#fighter2').addEventListener('change',function(){
+    document.querySelector('.secondFighter').addEventListener('change',function(){
         if(this.checked) document.getElementById('fighter1').checked = false;
     });
 
