@@ -9,6 +9,14 @@
     --superWhite: white;
 }
 
+.template-main {
+    background-image: url(/font/background\ img.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+}
+
+
 /* the super title */
 
 .title {
@@ -19,7 +27,7 @@
     color: var(--superWhite);
     padding: 2rem;
     height: 95px;
-    background-image: url(/font/fireTitle.png);
+    opacity: 0.5;
 
 }
 .title h1 {
@@ -110,7 +118,7 @@
 
 .filter ul {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     list-style-type: none;
     flex-wrap: wrap;
     gap:2rem
