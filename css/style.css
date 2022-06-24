@@ -67,6 +67,12 @@
     height: 100%;
     border: red 3px solid;
 }
+.firstFighter h3, .secondFighter h3{
+    padding: 5px 0;
+    background: rgb(0,0,0,.5);
+    text-align: center;
+    color: white;
+}
 .secondFighter {
     border: rgb(0, 47, 255) 3px solid;
     grid-column: 4;
