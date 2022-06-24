@@ -10,6 +10,9 @@
     --superWhite: white;
     --principal-color: rgb(185, 177, 120);
 }
+
+/************ CARACTRISTIC MODAL ************/
+
 .allDetails{
     position: absolute;
     z-index: 1000;
@@ -73,7 +76,7 @@
 
 .fightScene {
     display: grid;
-    grid-template-columns: 245px repeat(4, 1fr) 245px;
+    grid-template-columns: repeat(6, 1fr);
     gap: 5px;
     grid-auto-rows: minmax(100px, auto);
     padding-top: 20px;
@@ -85,11 +88,13 @@
 }
 
 .firstFighter {
+    justify-self: center;
     grid-column: 1;
     grid-row: 1 / 4 ;
     width: 240px;
     height: 320px;
-    border: red 3px solid;
+    border: rgb(240, 123, 123) 3px solid;
+    border-radius: 25px 0 0 25px;
     background: url(../img/fighter1.gif) no-repeat;
     cursor: pointer;
 }
@@ -99,14 +104,17 @@
     text-align: center;
     color: white;
 }
+.firstFighter h3{ border-radius:  25px 0 0 0; }
+.secondFighter h3{ border-radius: 0 25px 0 0; }
 .secondFighter {
-    align-self: center;
+    justify-self: center;
     grid-column: 6;
     grid-row: 1 / 4 ;
     cursor: pointer;
     width: 240px;
     height: 320px;
-    border: rgb(0, 47, 255) 3px solid;
+    border: rgb(107, 133, 219) 5px solid;
+    border-radius: 0 25px 25px 0;
     background: url(../img/fighter2.gif) no-repeat;
 }
 
@@ -115,6 +123,8 @@
     grid-column: 3 / 5;
     grid-row: 1 / 1 ;
     background: rgb(0,0,0,.5);
+    border-radius: 25px 25px 0 0;
+    width: 800px;
     height: 135px;
     color: white;
     overflow-y: auto;
@@ -122,18 +132,21 @@
 }
 
 .combatScene1,.combatScene2 {
-    grid-row: 2 / 4 ;
     width: 100%;
-    border: rgb(183, 0, 255) 3px solid;
+    height: 300px;
     background: rgb(0,0,0,.5);
     color: white;
     padding: 15px;
 }
 .combatScene1{
+    border: rgb(240, 123, 123) 3px solid;
     grid-column: 3 / 4;
- }
+    border-radius: 0 0 0 25px;
+}
 .combatScene2{
+    border: rgb(107, 133, 219) 3px solid;
     grid-column: 4 / 5;
+    border-radius: 0 0 25px 0;
  }
 
 /* The fight button */
@@ -143,29 +156,60 @@
     text-align: center;
     justify-content: center;
     border: yellow 3px solid;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-bottom: 1rem;
 }
 .btnFight button{
     padding: 5px 20px;
     font-size: 2rem;
+    border-radius: 25px
 }
 .btnFight button:hover{
-    background-color: rgb(244, 245, 230);
+    background-color: rgb(213, 216, 170);
 }
 
+/* Check First/Second Fighter */
+
+.checkHero{
+    display: grid;
+    align-items: center;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row: 3;
+    height: 50px;
+}
+
+.whosFighter1{
+    width: 440px;
+    justify-self: center;
+    grid-column: 1;
+    grid-row: 4;
+}
+.whosFighter2{
+    width: 440px;
+    justify-self: center;
+    grid-column: 7;
+    grid-row: 4;
+}
+
+.whosFighter1, .whosFighter2 {
+    text-align: center;
+    width: 240px;
+    background-color: var(--principal-color);
+    font-size: 2rem;
+    border-radius: 10px;
+}
 /* Filter session */
-
-.filterTitle {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-}
-
 .containerFilter {
     background-color: rgb(223, 223, 223);
 }
+.filterTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
 
 .filter  {
     font-size: 1.2rem;
@@ -216,23 +260,4 @@
 }
 .heroes img:hover{
     opacity: 0.3;
-}
-.checkHero{
-    width: var(--width-heroes);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    grid-column: 1 / 5;
-    padding: 5px 0;
-}
- .whosFighter{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 240px;
-    background-color: var(--principal-color);
-    font-size: 2rem;
-    border-radius: 10px;
-    margin: 0 15px;
 }
