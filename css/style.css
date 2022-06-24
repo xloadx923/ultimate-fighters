@@ -7,6 +7,7 @@
     --main-gb: black;
     --second-gb: rgb(0, 19, 128);
     --superWhite: white;
+    --principal-color: rgb(185, 177, 120);
 }
 
 .template-main {
@@ -133,13 +134,16 @@
     grid-template-columns: 1fr;
     overflow-y: auto;
     width: auto;
-    height: 1000px;
+    height: auto;
+    padding: 20px 0;
 }
 
 .heroesList h3{
     display: flex;
     justify-content: center;
     font-size: 2rem;
+    padding: 20px 0;
+    background: white;
 }
 
 .heroesList .heroes{
@@ -157,4 +161,24 @@
 }
 .heroes img:hover{
     opacity: 0.3;
+}
+.checkHero{
+    width: var(--width-heroes);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(2, 240px);
+    grid-template-rows: 1fr;
+    gap: 20px;
+    padding: 10px 0;
+}
+ .whoseFighter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 240px;
+    background-color: var(--principal-color);
+    font-size: 2rem;
+    border-radius: 10px;
 }

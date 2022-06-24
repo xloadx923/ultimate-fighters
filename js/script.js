@@ -36,11 +36,11 @@ function displayHeroes(todoList){
         changeFighter();
 
         heroDetail.addEventListener('click',function(event){
-            if(document.getElementById('fighter1').checked){
+            if(document.query('fighter1').checked){
                 displayFighter('.fighter1',hero);
                 displayStats('.statsDetail1',hero);
             }
-            if(document.getElementById('fighter2').checked){
+            if(document.query('fighter2').checked){
                 displayFighter('.fighter2',hero);
                 displayStats('.statsDetail2',hero);
             }
