@@ -16,7 +16,7 @@ function changeFighter(){
 }
 
 function closeDetails(){
-    document.querySelector('.allDetails').addEventListener('click',function(event){ this.classList.toggle('display'); })
+    document.querySelector('.allDetails').addEventListener('click',function(){ this.classList.toggle('display'); })
 }
 
 function displayFighter(fighter,hero){
@@ -46,16 +46,16 @@ function displayUniverse(){
 }
 /*************** Display stats *********************/
 function displayStats(nameDetail,hero){
-    document.querySelector(nameDetail).innerHTML = '';
-    const stats = document.createElement('div');
+    const stats = document.querySelector(nameDetail);
+    stats.innerHTML = '';
     stats.innerHTML += (nameDetail=='textDetails') ? '<i class="fa fa-times fa-2x fa-fw crossClose"></i>' : '';
-    stats.innerHTML += `<div class="titleStat">Life :${hero.powerstats.life}</div>`;
-    stats.innerHTML += `<div class="titleStat">Shield :${hero.powerstats.shield}</div>`;
-    stats.innerHTML += `<div class="titleStat">Intelligence :${hero.powerstats.intelligence}</div>`;
-    stats.innerHTML += `<div class="titleStat">Strength :${hero.powerstats.strength}</div>`;
-    stats.innerHTML += `<div class="titleStat">Durability :${hero.powerstats.durability}</div>`;
-    stats.innerHTML += `<div class="titleStat">Power :${hero.powerstats.power}</div>`;
-    stats.innerHTML += `<div class="titleStat">Combat :${hero.powerstats.combat}</div>`;
+    stats.innerHTML += `<div class="entitledStat">Life</div><div class="valueStat">${hero.powerstats.life}</div>`;
+    stats.innerHTML += `<div class="entitledStat">Shield</div><div class="valueStat">${hero.powerstats.shield}</div>`;
+    stats.innerHTML += `<div class="entitledStat">Intelligence</div><div class="valueStat">${hero.powerstats.intelligence}</div>`;
+    stats.innerHTML += `<div class="entitledStat">Strength</div><div class="valueStat">${hero.powerstats.strength}</div>`;
+    stats.innerHTML += `<div class="entitledStat">Durability</div><div class="valueStat">${hero.powerstats.durability}</div>`;
+    stats.innerHTML += `<div class="entitledStat">Power</div><div class="valueStat">${hero.powerstats.power}</div>`;
+    stats.innerHTML += `<div class="entitledStat">Combat</div><div class="valueStat">${hero.powerstats.combat}</div>`;
     document.querySelector(nameDetail).appendChild(stats);
 }
 /*************** Display heroes *********************/
@@ -81,7 +81,7 @@ function displayHeroes(todoList){
         changeFighter();
         closeDetails();
 
-        heroDetail.addEventListener('click',function(event){
+        heroDetail.addEventListener('click',function(){
             if(document.getElementById('fighter1').checked){
                 displayFighter('.firstFighter',hero);
                 displayStats('.combatScene1',hero);
