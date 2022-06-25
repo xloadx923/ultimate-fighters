@@ -22,6 +22,7 @@ function closeDetails(){
 function displayFighter(fighter,hero){
     document.querySelector(fighter).firstElementChild.innerText = hero.name;
     document.querySelector(fighter).style= `background: url(${hero.images.lg}) no-repeat;background-size: contain;`;
+    // EventListener on list of fighters
     document.querySelector(fighter).addEventListener('click',function(){
         document.querySelector('.allDetails').classList.toggle('display');
         displayStats('.textDetails',hero);
@@ -32,10 +33,16 @@ function findDuplicates(arr) {
     const filtered = arr.filter((item, index) => arr.indexOf(item) !== index);
     return [...new Set(filtered)]
 }
-/*************** Display universe *********************/
+/*************** Display universe without duplicate *********************/
 function displayUniverse(){
     const duplicates = findDuplicates(universe);
-    console.log(duplicates);
+    duplicates.sort();
+    duplicates.forEach((item, index) => {
+        const option = document.createElement('option');
+        option.setAttribute('value',item);
+        option.innerText = item;
+        document.querySelector('#universe').append(option);
+    });
 }
 /*************** Display stats *********************/
 function displayStats(nameDetail,hero){
