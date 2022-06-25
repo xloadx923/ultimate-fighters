@@ -37,7 +37,7 @@ function findDuplicates(arr) {
 function displayUniverse(){
     const duplicates = findDuplicates(universe);
     duplicates.sort();
-    duplicates.forEach((item, index) => {
+    duplicates.forEach((item) => {
         const option = document.createElement('option');
         option.setAttribute('value',item);
         option.innerText = item;
@@ -85,10 +85,12 @@ function displayHeroes(todoList){
             if(document.getElementById('fighter1').checked){
                 displayFighter('.firstFighter',hero);
                 displayStats('.combatScene1',hero);
+                localStorage.setItem('fighter1', hero.id+'/'+hero.name);
             }
             if(document.getElementById('fighter2').checked){
                 displayFighter('.secondFighter',hero);
                 displayStats('.combatScene2',hero);
+                localStorage.setItem('fighter2', hero.id+'/'+hero.name);
             }
         });
 
