@@ -60,7 +60,10 @@
 .title h1 {
     position: relative;
     z-index: 600;
-    font-size: 2.5rem;
+    font-size: 3rem;
+    background: -webkit-linear-gradient(0.50turn, rgb(240, 123, 123), rgb(107, 133, 219));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 .title img {
     position: absolute;
@@ -209,35 +212,17 @@
     font-size: 2rem;
     border-radius: 10px;
 }
-/* Filter session */
+/*********** Filter session ***********/
 .containerFilter {
-    background-color: rgb(185, 177, 120);
 }
-.filterTitle {
+
+.filter{
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 1.5rem;
     padding: 10px 0;
     background: var(--principal-color);
-}
-
-.filter {
-    font-size: 1.2rem;
-    overflow: auto;
-    height: 50px;
-}
-
-.filter ul {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    list-style-type: none;
-    flex-wrap: wrap;
-    gap: 2rem;
-    padding: 10px 0;
-    height: 50px;
-    background-color: rgb(100, 97, 73);
 }
 
 /* List of characters */
