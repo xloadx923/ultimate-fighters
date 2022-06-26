@@ -73,11 +73,11 @@ function displayStats(nameDetail,hero,valid){
             stats.innerHTML += `<div class="entitledStat">${splitObject[key]}</div><div class="valueStat">${value}</div>`;
         });
         Object.values(hero.appearance).forEach(function (value, key) {
-            stats.innerHTML += `<div class="entitledStat">${splitObject[key+7]}</div><div class="valueStat">${value}</div>`;
+            stats.innerHTML += `<div class="entitledStat">${splitObject[key+Object.getOwnPropertyNames(hero.biography).length]}</div><div class="valueStat">${value}</div>`;
         });
     }
     Object.values(hero.powerstats).forEach(function (value, key) {
-        stats.innerHTML += `<div class="entitledStat">${splitObject[key+13]}</div><div class="valueStat">${value}</div>`;
+        stats.innerHTML += `<div class="entitledStat">${splitObject[key+Object.getOwnPropertyNames(hero.appearance).length]}</div><div class="valueStat">${value}</div>`;
     });
 }
 /*************** Display heroes ***************************/
