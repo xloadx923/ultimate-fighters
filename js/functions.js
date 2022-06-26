@@ -4,21 +4,27 @@ function getRandomNumber(min, max){
     return Math.floor(Math.random() * (max - min) + min);
 }
 
+/********** Fighters choice ********************************/
 function changeFighter(){
-
     document.getElementById('fighter1').addEventListener('change',function(){
         if(this.checked) document.getElementById('fighter2').checked = false;
     });
     document.getElementById('fighter2').addEventListener('change',function(){
         if(this.checked) document.getElementById('fighter1').checked = false;
     });
-
 }
-
+/*********** Universe choice *****************/
+function changeUniverse(){
+    document.getElementById('universe').addEventListener('change',function(event){
+        localStorage.setItem('universe', this.value);
+        location.reload();
+    });
+}
+/*********************************************/
 function closeDetails(){
     document.querySelector('.allDetails').addEventListener('click',function(){ this.classList.toggle('display'); })
 }
-
+/*********************************************/
 function displayFighter(fighter,hero){
     document.querySelector(fighter).firstElementChild.innerText = hero.name;
     document.querySelector(fighter).style= `background: url(${hero.images.lg}) no-repeat;background-size: contain;`;
@@ -33,7 +39,7 @@ function findDuplicates(arr) {
     const filtered = arr.filter((item, index) => arr.indexOf(item) !== index);
     return [...new Set(filtered)]
 }
-/*************** Display universe without duplicate *********************/
+/*************** Display list universe without duplicate *********************/
 function displayUniverse(){
     const duplicates = findDuplicates(universe);
     duplicates.sort();
@@ -43,6 +49,8 @@ function displayUniverse(){
         option.innerText = item;
         document.querySelector('#universe').append(option);
     });
+    
+    changeUniverse();
 }
 /*************** Display stats *********************/
 function displayStats(nameDetail,hero){
@@ -71,15 +79,17 @@ function displayHeroes(todoList){
         universe.push(result); // Traitement des univers inconnus
 
         const heroDetail = document.createElement("button");
-        heroDetail.classList.add('choiceHero');
-        heroDetail.id = hero.id;
+        if(localStorage.getItem('universe') === hero.biography.publisher || localStorage.getItem('universe') === null){
+            heroDetail.classList.add('choiceHero');
+            heroDetail.id = hero.id;
 
-        const image = document.createElement("img");
-        image.src= hero.images.lg;
-        image.alt = image.title = hero.name;
-        heroDetail.append(image);
-        document.querySelector('.heroes').appendChild(heroDetail);
-
+            const image = document.createElement("img");
+            image.src= hero.images.lg;
+            image.alt = image.title = hero.name;
+            heroDetail.append(image);
+            console.log(localStorage.getItem('universe'));
+            document.querySelector('.heroes').appendChild(heroDetail);
+        }
         changeFighter();
         closeDetails();
 

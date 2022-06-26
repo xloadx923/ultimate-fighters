@@ -6,7 +6,6 @@ async function waitingForResponse() {
     const todoList = await response.json();
 
     displayHeroes(todoList);
-    // console.log(todoList);
 }
 
 waitingForResponse();
