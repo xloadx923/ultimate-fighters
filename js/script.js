@@ -1,6 +1,4 @@
-
 const heroes = [];
-const fighters = [];
 const universe = [];
 
 async function waitingForResponse() {
@@ -8,6 +6,7 @@ async function waitingForResponse() {
     const todoList = await response.json();
 
     displayHeroes(todoList);
+    // console.log(todoList);
 }
 
 waitingForResponse();
