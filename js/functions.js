@@ -66,17 +66,18 @@ function displayStats(nameDetail,hero,valid){
     Object.getOwnPropertyNames(hero.biography) .forEach(title => { splitObject.push(title); });
     Object.getOwnPropertyNames(hero.appearance).forEach(title => { splitObject.push(title); });
     Object.getOwnPropertyNames(hero.powerstats).forEach(title => { splitObject.push(title); });
+    console.log(splitObject);
     if(valid){
         stats.innerHTML += `<div class="imageStat"><img src="${hero.images.sm}"></div>`;
         Object.values(hero.biography).forEach(function (value, key) {
             stats.innerHTML += `<div class="entitledStat">${splitObject[key]}</div><div class="valueStat">${value}</div>`;
         });
         Object.values(hero.appearance).forEach(function (value, key) {
-            stats.innerHTML += `<div class="entitledStat">${splitObject[key+3]}</div><div class="valueStat">${value}</div>`;
+            stats.innerHTML += `<div class="entitledStat">${splitObject[key+7]}</div><div class="valueStat">${value}</div>`;
         });
     }
     Object.values(hero.powerstats).forEach(function (value, key) {
-        stats.innerHTML += `<div class="entitledStat">${splitObject[key+9]}</div><div class="valueStat">${value}</div>`;
+        stats.innerHTML += `<div class="entitledStat">${splitObject[key+13]}</div><div class="valueStat">${value}</div>`;
     });
 }
 /*************** Display heroes ***************************/
