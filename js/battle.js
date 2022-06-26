@@ -1,13 +1,19 @@
 
+const textCombat = document.querySelector('.textCombat');
+textCombat.innerHTML = '';
+// const renderedText = htmlElement.innerText;
 /*************** Display result roundFinal ********************/
 function setResultRound(a,b){
-    const resultBattle = "\n\t"+ a +" a gagné"+"\n\t"+ b +" a perdu\n";
+    const resultBattle =  a +" a gagné"+" - "+ b +" a perdu";
     localStorage.setItem( 'resultBattle',  resultBattle );
     console.log(resultBattle);
+    textCombat.innerHTML += '<p style="width: 100%;color:lime;">'+resultBattle+'</p>';
 }
 /*************** Display rounds *******************************/
 function setRound(a,b,c,d){
     console.log("\tVie:",a,"\t Attaque:",b,"\t <==> \t Vie:",c," \t Attaque:",d);
+    const resultRound = "\tVie:"+a+"\t Attaque:"+b+"\t <==> \t Vie:"+c+" \t Attaque:"+d;
+    textCombat.innerHTML += '<p>'+resultRound+'</p>';
 }
 
 function reductTab(loser){

@@ -43,10 +43,10 @@ body{
     display: flex;
 } */
 .textDetails{
-    width: 40%;
+    width: 50%;
     height: auto;
     display: grid;
-    grid-template-columns: 180px 155px 390px;
+    grid-template-columns: 180px 155px 580px;
     align-items: center;
     border: solid gray 1px;
     background-color: var(--second-gradient);
@@ -156,8 +156,18 @@ body{
     height: 100%;
     background: var(--black-75);
     padding: 10px;
+    font-size: 1.5rem;
     overflow-y: auto;
- }
+}
+.textCombat p{
+    width: 100%;
+    color: var(--first-gradient);
+}
+.textCombat:hover{
+    position: relative;
+    z-index: 1000;
+    height: 50vh;
+}
 
 .combatScene1,.combatScene2 {
     display: grid;

@@ -33,7 +33,6 @@ function displayFighter(fighter,hero){
     document.querySelector(fighter).firstElementChild.innerText = hero.name;
     document.querySelector(fighter).style= `background: url(${hero.images.lg}) no-repeat;background-size: contain;`;
     // EventListener on list of fighters
-    console.log(document.querySelector(fighter))
     document.querySelector(fighter).addEventListener('click',function(){
         document.querySelector('.allDetails').style.display = 'flex';
         displayStats('.textDetails',hero, true);
