@@ -23,7 +23,7 @@ function reductTab(loser){
 /*************** Launch rounds ********************************/
 function battle(hero)
 {
-    let attackerFight, defenserFight, winner, loser;
+    let attackerFight, defenserFight, winner, loser, i = 0;
 
     if( hero.id === parseInt(localStorage.getItem("attacker"))){
         heroes.fighter1 = hero;
@@ -44,9 +44,13 @@ function battle(hero)
             if(heroes.fighter1.powerstats.life > 0 || heroes.fighter2.powerstats.life > 0){ setRound(heroes.fighter1.powerstats.life,attackerFight,heroes.fighter2.powerstats.life,defenserFight); }
 
         }
+        // End of the battle
         if(heroes.fighter1.powerstats.life <= 0 && heroes.fighter1.powerstats.life !== heroes.fighter2.powerstats.life)      { setResultRound(winner.name, loser.name); }
         else if(heroes.fighter2.powerstats.life <= 0 && heroes.fighter1.powerstats.life !== heroes.fighter2.powerstats.life) { setResultRound(winner.name, loser.name); }
-        else if(heroes.fighter1.powerstats.life === heroes.fighter2.powerstats.life) { setRound(heroes.fighter1.powerstats.life,attackerFight,heroes.fighter2.powerstats.life,defenserFight);console.log("Exaequo !!!!!"); 
+        else if(heroes.fighter1.powerstats.life === heroes.fighter2.powerstats.life) {
+            setRound(heroes.fighter1.powerstats.life,attackerFight,heroes.fighter2.powerstats.life,defenserFight);
+            console.log("Exaequo !!!!!");
+            textCombat.innerHTML += '<p style="width: 100%;color:yellow;">Exaequo !!!!!</p>';
         }
     }
 }

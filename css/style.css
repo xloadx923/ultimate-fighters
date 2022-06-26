@@ -61,14 +61,15 @@ body{
     background: url(/img/background.jpg) no-repeat;
     position: absolute;
     width: 100%;
+    height: 1020px;
 }
 
 /* the super title */
 
 .title {
-    display: block;
-    align-items: center;
-    text-align: center;
+    display: flex;
+    align-self: center;
+    justify-content: center;
     background-color: var(--main-gb);
     color: var(--superWhite);
     padding: 2rem;
@@ -79,9 +80,9 @@ body{
 .title h1 {
     position: relative;
     z-index: 600;
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bolder;
-    background: -webkit-linear-gradient(0.50turn, var(--first-gradient), var(--second-gradient));
+    background: linear-gradient(0.25turn, var(--first-gradient), var(--second-gradient));
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -91,7 +92,7 @@ body{
     width: 360px;
     margin-top: -145px;
     margin-left: -166px;
-    background-image: url(../img/fighter1.gif);
+    background: url(../font/fireTitle.png);
     z-index: 1;
     object-position:0 -20%
 }
@@ -148,7 +149,6 @@ body{
     background: linear-gradient(0.25turn, var(--first-gradient), var(--second-gradient));
     width: 800px;
     height: 135px;
-    color: white;
     padding: 4px;
 }
 .textCombat{
@@ -189,7 +189,6 @@ body{
     border: var(--second-gradient) 3px solid;
     grid-column: 4 / 5;
     border-radius: 0 0 25px 0;
-    color: black;
 }
 .textDetails .entitledStat{
     grid-column: 2 / 3;
@@ -302,6 +301,11 @@ body{
     background-color: var(--black-75);
     padding-bottom: 50px;
 }
+.heroesList:hover{
+    position: relative;
+    z-index: 1001;
+    margin-top: -100px;
+}
 
 .heroesList h3{
     display: flex;
@@ -312,6 +316,7 @@ body{
 .heroes{
     display: grid;
     grid-template-columns: repeat(563, 210px);
+    width: 100%;
     height: 265px;
     overflow-y: hidden;
     overflow-x: auto;
