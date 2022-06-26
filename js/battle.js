@@ -1,10 +1,11 @@
 
+/*************** Display result roundFinal ********************/
 function setResultRound(a,b){
     const resultBattle = "\n\t"+ a +" a gagné"+"\n\t"+ b +" a perdu\n";
-    localStorage.setItem( 'battle',  resultBattle );
+    localStorage.setItem( 'resultBattle',  resultBattle );
     console.log(resultBattle);
 }
-
+/*************** Display rounds *******************************/
 function setRound(a,b,c,d){
     console.log("\tVie:",a,"\t Attaque:",b,"\t <==> \t Vie:",c," \t Attaque:",d);
 }
@@ -13,6 +14,7 @@ function reductTab(loser){
     //heroes.splice(heroes.indexOf(loser),1);
 }
 
+/*************** Launch rounds ********************************/
 function battle(hero)
 {
     let attackerFight, defenserFight, winner, loser;
@@ -20,7 +22,7 @@ function battle(hero)
     if( hero.id === parseInt(localStorage.getItem("attacker"))){
         heroes.fighter1 = hero;
     }
-        if( hero.id === parseInt(localStorage.getItem("defenser"))){
+    if( hero.id === parseInt(localStorage.getItem("defenser"))){
         heroes.fighter2 = hero;
 
         console.log("Démarrage du combat entre " + heroes.fighter1.name + " et " +  heroes.fighter2.name);
@@ -38,7 +40,7 @@ function battle(hero)
         }
         if(heroes.fighter1.powerstats.life <= 0 && heroes.fighter1.powerstats.life !== heroes.fighter2.powerstats.life)      { setResultRound(winner.name, loser.name); }
         else if(heroes.fighter2.powerstats.life <= 0 && heroes.fighter1.powerstats.life !== heroes.fighter2.powerstats.life) { setResultRound(winner.name, loser.name); }
-        else if(heroes.fighter1.powerstats.life === heroes.fighter2.powerstats.life) { setRound(heroes.fighter1.powerstats.life,attackerFight,heroes.fighter2.powerstats.life,defenserFight);console.log("Exaequo !!!!!"); }
-
+        else if(heroes.fighter1.powerstats.life === heroes.fighter2.powerstats.life) { setRound(heroes.fighter1.powerstats.life,attackerFight,heroes.fighter2.powerstats.life,defenserFight);console.log("Exaequo !!!!!"); 
+        }
     }
 }
