@@ -23,16 +23,19 @@ function changeUniverse(){
     });
 }
 /*********** Close modal Caractristic *********************/
-function closeDetails(){
-    document.querySelector('.allDetails').addEventListener('click',function(){ this.classList.toggle('display'); })
+function closeStats(){
+    document.querySelector('.allDetails').addEventListener('click',function(){
+        this.style.display = 'none';
+    });
 }
 /*********** Display fighters *****************************/
 function displayFighter(fighter,hero){
     document.querySelector(fighter).firstElementChild.innerText = hero.name;
     document.querySelector(fighter).style= `background: url(${hero.images.lg}) no-repeat;background-size: contain;`;
     // EventListener on list of fighters
+    console.log(document.querySelector(fighter))
     document.querySelector(fighter).addEventListener('click',function(){
-        document.querySelector('.allDetails').classList.toggle('display');
+        document.querySelector('.allDetails').style.display = 'flex';
         displayStats('.textDetails',hero, true);
     });
 }
@@ -60,9 +63,8 @@ function displayUniverse(){
 function displayStats(nameDetail,hero,valid){
     let splitObject = [];
     const stats = document.querySelector(nameDetail);
-    console.log(hero.appearance);
     stats.innerHTML = '';
-    Object.getOwnPropertyNames(hero.biography).forEach(title => { splitObject.push(title); });
+    Object.getOwnPropertyNames(hero.biography) .forEach(title => { splitObject.push(title); });
     Object.getOwnPropertyNames(hero.appearance).forEach(title => { splitObject.push(title); });
     Object.getOwnPropertyNames(hero.powerstats).forEach(title => { splitObject.push(title); });
     if(valid){
@@ -99,8 +101,9 @@ function displayHeroes(todoList){
             heroDetail.append(image);
             document.querySelector('.heroes').appendChild(heroDetail);
         }
+
         changeFighter();
-        closeDetails();
+        closeStats();
 
         let buttonBefore1 = undefined, buttonBefore2 = undefined;
 
@@ -108,13 +111,11 @@ function displayHeroes(todoList){
             if(document.getElementById('fighter1').checked){
                 displayFighter('.firstFighter',hero);
                 displayStats('.combatScene1',hero,false);
-
                 localStorage.setItem('attacker', hero.id);
             }
             if(document.getElementById('fighter2').checked){
                 displayFighter('.secondFighter',hero);
                 displayStats('.combatScene2',hero,false);
-
                 localStorage.setItem('defenser', hero.id);
             }
         });

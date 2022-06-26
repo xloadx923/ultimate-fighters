@@ -39,9 +39,9 @@ body{
     width: 100vw;
     height: 100vh;
 }
-.allDetails.display{
+/* .allDetails.display{
     display: flex;
-}
+} */
 .textDetails{
     width: 40%;
     height: auto;
@@ -181,13 +181,13 @@ body{
     border-radius: 0 0 25px 0;
     color: black;
 }
-.entitledStat{
+.textDetails .entitledStat{
     grid-column: 2 / 3;
     background-color: var(--first-gradient);
     padding-left: 20px;
     text-transform: capitalize;
 }
-.valueStat{
+.textDetails .valueStat{
     grid-column: 3 / 4;
     background-color: var(--superWhite);
     text-align: center;
@@ -196,16 +196,18 @@ body{
 .imageStat{
     grid-row: 1 / span 12;
 }
-.combatScene1 .entitledStat, .combatScene1 .entitledStat{
+.combatScene1 .entitledStat, .combatScene2 .entitledStat{
     grid-column: 1 / 2;
     background-color: var(--first-gradient);
     width: 100%;
     color: var(--superWhite);
+    padding-left: 20px;
 }
 .combatScene1 .valueStat, .combatScene2 .valueStat{
     grid-column: 2 / 3;
     background-color: var(--second-gradient);
     width: 100%;
+    text-align: center;
 }
 /* The fight button */
 
