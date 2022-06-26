@@ -1,7 +1,7 @@
 
 const textCombat = document.querySelector('.textCombat');
 textCombat.innerHTML = '';
-// const renderedText = htmlElement.innerText;
+
 /*************** Display result roundFinal ********************/
 function setResultRound(a,b){
     const resultBattle =  a +" a gagné"+" - "+ b +" a perdu";

@@ -17,7 +17,7 @@ function changeFighter(){
 }
 /*********** Universe choice ******************************/
 function changeUniverse(){
-    document.getElementById('universe').addEventListener('change',function(event){
+    document.getElementById('universe').addEventListener('change',function(){
         localStorage.setItem('universe', this.value);
         location.reload();
     });
@@ -106,7 +106,7 @@ function displayHeroes(todoList){
 
         let buttonBefore1 = undefined, buttonBefore2 = undefined;
 
-        heroDetail.addEventListener('click',function(event){
+        heroDetail.addEventListener('click',function(){
             if(document.getElementById('fighter1').checked){
                 displayFighter('.firstFighter',hero);
                 displayStats('.combatScene1',hero,false);
