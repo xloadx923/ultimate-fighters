@@ -60,25 +60,28 @@ function displayUniverse(){
 }
 /*************** Display stats ***************************/
 function displayStats(nameDetail,hero,valid){
-    let splitObject = [];
+    let statistics = [];
+    let caractristics = [];
     const stats = document.querySelector(nameDetail);
     stats.innerHTML = '';
-    Object.getOwnPropertyNames(hero.biography) .forEach(title => { splitObject.push(title); });
-    Object.getOwnPropertyNames(hero.appearance).forEach(title => { splitObject.push(title); });
-    Object.getOwnPropertyNames(hero.powerstats).forEach(title => { splitObject.push(title); });
+    Object.getOwnPropertyNames(hero.powerstats).forEach(title => { statistics.push(title); });
+    Object.getOwnPropertyNames(hero.biography) .forEach(title => { caractristics.push(title); });
+    Object.getOwnPropertyNames(hero.appearance).forEach(title => { caractristics.push(title); });
 
     if(valid){
         stats.innerHTML += `<div class="imageStat"><img src="${hero.images.sm}"></div>`;
         Object.values(hero.biography).forEach(function (value, key) {
-            stats.innerHTML += `<div class="entitledStat">${splitObject[key]}</div><div class="valueStat">${value}</div>`;
+            stats.innerHTML += `<div class="entitledStat">${caractristics[key]}</div><div class="valueStat">${value}</div>`;
         });
         Object.values(hero.appearance).forEach(function (value, key) {
-            stats.innerHTML += `<div class="entitledStat">${splitObject[key+Object.getOwnPropertyNames(hero.biography).length]}</div><div class="valueStat">${value}</div>`;
+            stats.innerHTML += `<div class="entitledStat">${caractristics[key+Object.getOwnPropertyNames(hero.biography).length]}</div><div class="valueStat">${value}</div>`;
         });
     }
-    Object.values(hero.powerstats).forEach(function (value, key) {
-        stats.innerHTML += `<div class="entitledStat">${splitObject[key+Object.getOwnPropertyNames(hero.appearance).length]}</div><div class="valueStat">${value}</div>`;
-    });
+    else{
+        Object.values(hero.powerstats).forEach(function (value, key) {
+            stats.innerHTML += `<div class="entitledStat">${statistics[key]}</div><div class="valueStat">${value}</div>`;
+        });
+    }
 }
 /*************** Display heroes ***************************/
 function displayHeroes(todoList){

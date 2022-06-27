@@ -111,7 +111,7 @@ body{
     height: 320px;
     border: var(--first-gradient) 3px solid;
     border-radius: 25px 0 0 25px;
-    background:url(/img/nocharacters.png);
+    background:url(/img/fighter1.gif);
     background-position-x: center;
     background-position-y: center;
     cursor: pointer;
@@ -133,7 +133,7 @@ body{
     height: 320px;
     border: rgb(107, 133, 219) 5px solid;
     border-radius: 0 25px 25px 0;
-    background:url(/img/nocharacters2.png);
+    background:url(/img/fighter2.gif);
     background-position-x: center;
     background-position-y: center;
 }
@@ -211,6 +211,7 @@ body{
     width: 100%;
     color: var(--superWhite);
     padding-left: 20px;
+    text-transform: capitalize;
 }
 .combatScene1 .valueStat, .combatScene2 .valueStat{
     grid-column: 2 / 3;
