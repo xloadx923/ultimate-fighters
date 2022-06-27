@@ -340,7 +340,11 @@ body{
     height: auto;
     border: none;
 }
-.choiceHero{ width: 98%; }
+.choiceHero{
+    width: 98%;
+    background-color: var(--main-gb);
+}
 .heroes img:hover{
     opacity: 0.5;
+    border: solid transparent 5px;
 }
