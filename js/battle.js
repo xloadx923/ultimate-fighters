@@ -1,4 +1,4 @@
-
+/*************** Init combat's text ***************************/
 const textCombat = document.querySelector('.textCombat');
 textCombat.innerHTML = '';
 
@@ -24,29 +24,41 @@ function setRound(a,b,c,d){
 let interval,attackerFight, defenserFight, attackerLife, defenserLife, winner, loser;
 
 function fight(heroes){
+    attackerFight = heroes.fighter1.powerstats.intelligence +
+                    getRandomNumber(0, heroes.fighter1.powerstats.weapon) +
+                    heroes.fighter1.powerstats.strength;
 
-    attackerFight = heroes.fighter1.powerstats.intelligence + getRandomNumber(0, heroes.fighter1.powerstats.weapon);
-    defenserFight = heroes.fighter2.powerstats.intelligence + getRandomNumber(0, heroes.fighter2.powerstats.shield);
-    attackerLife  = heroes.fighter1.powerstats.life;
-    defenserLife  = heroes.fighter2.powerstats.life;
+    defenserFight = heroes.fighter2.powerstats.intelligence +
+                    getRandomNumber(0, heroes.fighter2.powerstats.shield)+
+                    heroes.fighter2.powerstats.strength;
 
-    if(attackerFight > defenserFight && defenserFight > 0)      { defenserLife -= attackerFight; winner = heroes.fighter1; loser = heroes.fighter2;/*reductTab(heroes.fighter2);*/ }
-    else if(defenserFight > attackerFight && attackerFight > 0) { attackerLife -= defenserFight; winner = heroes.fighter2; loser = heroes.fighter1;/*reductTab(heroes.fighter1);*/ }
+    if(attackerFight > defenserFight && defenserFight > 0) {
+        heroes.fighter2.powerstats.life -= attackerFight;
+        winner = heroes.fighter1;
+        loser = heroes.fighter2;
+    }
+    else if(defenserFight > attackerFight && attackerFight > 0) {
+        heroes.fighter1.powerstats.life -= defenserFight;
+        winner = heroes.fighter2;
+        loser = heroes.fighter1;
+    }
 
-    if(attackerLife > 0 || defenserLife > 0){ setRound(attackerLife,attackerFight,defenserLife,defenserFight); }
+    if(heroes.fighter1.powerstats.life > 0 || heroes.fighter2.powerstats.life > 0){ setRound(heroes.fighter1.powerstats.life,attackerFight,heroes.fighter2.powerstats.life,defenserFight); }
 
-    if(attackerLife <= 0 && attackerLife !== defenserLife)      { setResultRound(winner.name, loser.name); }
-    else if(defenserLife <= 0 && attackerLife !== defenserLife) { setResultRound(winner.name, loser.name); }
-    else if(attackerLife === defenserLife) {
-        setRound(attackerLife,attackerFight,defenserLife,defenserFight);
+    if(heroes.fighter1.powerstats.life <= 0 && heroes.fighter1.powerstats.life !== heroes.fighter2.powerstats.life)      { setResultRound(winner.name, loser.name); }
+    else if(heroes.fighter2.powerstats.life <= 0 && heroes.fighter1.powerstats.life !== heroes.fighter2.powerstats.life) { setResultRound(winner.name, loser.name); }
+    else if(heroes.fighter1.powerstats.life === heroes.fighter2.powerstats.life) {
         console.log("Exaequo !!!!!");
         textCombat.innerHTML += '<p style="width: 100%;color:yellow;">Exaequo !!!!!</p>';
     }
-    if(attackerLife <= 0 || defenserLife <= 0){
+    if(heroes.fighter1.powerstats.life <= 0 || heroes.fighter2.powerstats.life <= 0){
         clearInterval(interval);
         localStorage.setItem('attacker','');
         localStorage.setItem('defenser','');
     }
+
+    document.querySelector('.combatScene1 .valueStat.life').innerText = heroes.fighter1.powerstats.life;
+    document.querySelector('.combatScene2 .valueStat.life').innerText = heroes.fighter2.powerstats.life;
 
 }
 
@@ -60,7 +72,7 @@ function battle(hero)
 
         heroes.fighter2 = hero;
         console.log("Démarrage du combat entre " + heroes.fighter1.name + " et " +  heroes.fighter2.name);
-        interval =  setInterval(function(){ fight(heroes) }, 1000);
+        interval =  setInterval(function(){ fight(heroes) }, 500);
 
     }
 }

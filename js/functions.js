@@ -80,15 +80,15 @@ function displayStats(nameDetail,hero,valid){
     }
     else{
         Object.values(hero.powerstats).forEach(function (value, key) {
-            stats.innerHTML += `<div class="entitledStat">${statistics[key]}</div><div class="valueStat">${value}</div>`;
+            stats.innerHTML += `<div class="entitledStat">${statistics[key]}</div><div class="valueStat ${statistics[key]}">${value}</div>`;
         });
     }
 }
 /*************** Display heroes ***************************/
 function displayHeroes(todoList){
     todoList.forEach(hero => {
-        hero.powerstats.life = 1500;
-        hero.powerstats.shield = getRandomNumber(10,20);
+        hero.powerstats.life = hero.powerstats.durability * 10;
+        hero.powerstats.shield = getRandomNumber(10,20)+20;
         hero.powerstats.weapon = getRandomNumber(10,20);
 
         const result = (hero.biography.publisher === null) ? 'Unknown universe' : hero.biography.publisher.trim();
@@ -117,7 +117,7 @@ function displayHeroes(todoList){
                 displayStats('.combatScene1',hero,false);
                 localStorage.setItem('attacker', hero.id);
             }
-            if(document.getElementById('fighter2').checked){
+            else if(document.getElementById('fighter2').checked){
                 displayFighter('.secondFighter',hero);
                 displayStats('.combatScene2',hero,false);
                 localStorage.setItem('defenser', hero.id);
