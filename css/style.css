@@ -12,7 +12,7 @@
     --second-gb: rgb(0, 19, 128);
     --superWhite: white;
     --principal-color: rgb(185, 177, 120);
-    --first-gradient: rgb(182, 61, 59);
+    --first-gradient: rgb(207, 107, 106);
     --second-gradient: rgb(14 95 139);
     --black-75: rgb(0, 0, 0, .75);
     --borderText: rgb(255 183 150);
@@ -101,6 +101,7 @@ body{
 
 .firstFighter, .secondFighter {
     grid-row: 2 / 4 ;
+    justify-self: center;
     cursor: pointer;
     width: 240px;
     height: 320px;
@@ -109,7 +110,6 @@ body{
 }
 
 .firstFighter {
-    justify-self: center;
     grid-column: 2;
     border: var(--first-gradient) 5px solid;
     border-radius: 25px 0 0 25px;
