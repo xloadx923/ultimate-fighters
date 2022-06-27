@@ -229,20 +229,26 @@ body{
 
 .btnFight {
     background-image: url(../img/fight_button.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    width: 115%;
+    margin-left: 75px;
+    padding: 21%;
     text-align: center;
     align-items: center;
     justify-content: center;
-    grid-column: 4 / span 1;
+    grid-column: 3 / span 1;
     grid-row: 4;
 }
-.btnFight button{
+/* .btnFight button{
     padding: 5px 20px;
     font-size: 2rem;
     border-radius: 25px;
     color: white;
     border: solid white 1px;
     background: linear-gradient(0.25turn, var(--first-gradient), var(--second-gradient));
-}
+} */
 
 .btnFight button:hover{
     background: linear-gradient(0.25turn, rgb(224, 192, 192), rgb(159, 171, 209));
