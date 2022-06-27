@@ -71,11 +71,12 @@ function displayStats(nameDetail,hero,valid){
     if(valid){
         stats.innerHTML += `<div class="imageStat"><img src="${hero.images.sm}"></div>`;
         Object.values(hero.biography).forEach(function (value, key) {
-            stats.innerHTML += `<div class="entitledStat">${caractristics[key]}</div><div class="valueStat">${value}</div>`;
+            stats.innerHTML += `<div class="entitledStat">${caractristics[key]}</div><div class="valueStat">${value  == '' ? 'Unknown' : value}</div>`;
         });
         Object.values(hero.appearance).forEach(function (value, key) {
             stats.innerHTML += `<div class="entitledStat">${caractristics[key+Object.getOwnPropertyNames(hero.biography).length]}</div><div class="valueStat">${value}</div>`;
         });
+        stats.innerHTML += `<div class="entitledStat">Combat formula</div><div class="valueStat formula">Affichage formule de combat</div>`;
     }
     else{
         Object.values(hero.powerstats).forEach(function (value, key) {

@@ -16,6 +16,7 @@
     --second-gradient: rgb(14 95 139);
     --black-75: rgb(0, 0, 0, .75);
     --borderText: rgb(255 183 150);
+    --formula-color: rgb(212, 212, 119);
 }
 
 ::-webkit-scrollbar { width: 10px; }
@@ -117,13 +118,13 @@ body{
     cursor: pointer;
 }
 .firstFighter h3, .secondFighter h3{
-    padding: 5px 0;
     background: rgb(0,0,0,.5);
     text-align: center;
     color: white;
+    height: 23px;
 }
-.firstFighter h3{ border-radius:  25px 0 0 0; }
-.secondFighter h3{ border-radius: 0 25px 0 0; }
+.firstFighter h3{ border-radius:  27px 0 0 0; }
+.secondFighter h3{ border-radius: 0 27px 0 0; }
 .secondFighter {
     justify-self: center;
     grid-column: 3;
@@ -200,8 +201,12 @@ body{
 .textDetails .valueStat{
     grid-column: 3 / 4;
     background-color: var(--superWhite);
+    height: 100%;
     text-align: center;
     color: black;
+}
+.textDetails .valueStat.formula{
+    background-color: var(--formula-color);
 }
 .imageStat{
     grid-row: 1 / span 12;
@@ -223,7 +228,7 @@ body{
 /* The fight button */
 
 .btnFight {
-    background-image: url(/img/fight\ button.png);
+    background-image: url(../img/fight_button.png);
     text-align: center;
     align-items: center;
     justify-content: center;
