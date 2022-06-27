@@ -66,7 +66,7 @@ function displayStats(nameDetail,hero,valid){
     Object.getOwnPropertyNames(hero.biography) .forEach(title => { splitObject.push(title); });
     Object.getOwnPropertyNames(hero.appearance).forEach(title => { splitObject.push(title); });
     Object.getOwnPropertyNames(hero.powerstats).forEach(title => { splitObject.push(title); });
-    console.log(splitObject);
+
     if(valid){
         stats.innerHTML += `<div class="imageStat"><img src="${hero.images.sm}"></div>`;
         Object.values(hero.biography).forEach(function (value, key) {
