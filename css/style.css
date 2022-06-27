@@ -230,26 +230,28 @@ body{
     text-align: center;
 }
 /* The fight button */
-
+.btnFight, .btnFight button{
+    background: var(--second-gradient);
+    border-radius: 25px;
+    width: 150px;
+    height: 40px;
+}
 .btnFight {
-    background-image: url(../img/fight_button.png);
-    text-align: center;
     align-items: center;
-    justify-content: center;
-    grid-column: 4 / span 1;
+    justify-self: center;
+    grid-column: 4;
     grid-row: 4;
 }
 .btnFight button{
-    padding: 5px 20px;
     font-size: 2rem;
-    border-radius: 25px;
-    color: white;
-    border: solid white 1px;
-    background: linear-gradient(0.25turn, var(--first-gradient), var(--second-gradient));
+    border: solid var(--first-gradient) 1px;
+    /* background: linear-gradient(0.25turn, var(--first-gradient), var(--second-gradient)); */
+    background: url(../img/fight_button.png) center no-repeat;
+    background-size: 50%;
 }
 
 .btnFight button:hover{
-    background: linear-gradient(0.25turn, rgb(224, 192, 192), rgb(159, 171, 209));
+    opacity: 0.7;
 }
 
 /* Check First/Second Fighter */
