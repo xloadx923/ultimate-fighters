@@ -140,6 +140,7 @@ body{
     width: 100%;
     height: 100%;
     background-color: green;
+    transition: width 0.5s;
 }
 
 .logCombat {
@@ -171,7 +172,7 @@ body{
 
 .combatScene1,.combatScene2 {
     display: grid;
-    grid-template-columns: 285px 75px;
+    grid-template-columns: 1fr 285px 75px 1fr;
     align-items: center;
     gap: 1px;
     width: 100%;
@@ -215,7 +216,7 @@ body{
     grid-row: 1 / span 12;
 }
 .combatScene1 .entitledStat, .combatScene2 .entitledStat{
-    grid-column: 1 / 2;
+    grid-column: 2 / 3;
     background-color: var(--first-gradient);
     width: 100%;
     color: var(--superWhite);
@@ -223,7 +224,7 @@ body{
     text-transform: capitalize;
 }
 .combatScene1 .valueStat, .combatScene2 .valueStat{
-    grid-column: 2 / 3;
+    grid-column: 3 / 4;
     background-color: var(--second-gradient);
     width: 100%;
     text-align: center;
