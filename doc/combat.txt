@@ -1,0 +1,55 @@
+Pour le combat
+
+Le mieux déjà, est de voir l'organisation, je propose
+que chaque combattants agissent l'un après l'autre. C'est celui qui a  le plus de Speed (SPD) qui commence.
+
+Nous avons les stats :
+
+Intelligent : (INT)
+Strenght : (STR)
+Speed : (SPD)
+Durability : (DUR)
+Power : (POW)
+Combat : (CMB)
+
+Pour en faire un système intéressant, il faut utiliser toutes les stats (pour pas désavantager un personnage).
+
+Je propose donc, que les statistiques soit traduit ainsi
+
+Speed = Chance d'esquiver %.
+Si un personnage à 100 en SPD, il doit être capable à chaques coups reçus d'esquiver à 25%
+Donc en gros, on prend la valeur X / 4, qu'on traduit en %
+Quelqu'un avec 40 en esquive a que 10% de chance d'esquiver un coup.
+
+L'intelligence = Chance de lancer un sort avant d'attaquer au corps à corps.
+Si un personnage à 100 en intelligence, il a 50% de chance de lancer un sort avant une attaque.
+
+Puissance = Dégât lié au sort.
+Si un personnage à 100 en Puissance, il inflige donc 100 de dégât à l'adversaire.
+
+Durabilité = Point de vie x 10
+Si un personnage a 100 en DUR, il a donc 1000 de point de vie.
+
+Combat = Chance de toucher son adversaire
+Si un personnage a 100 en CMB il a 90% de chance de toucher un adversaire
+
+Force = dégât lié combat
+Si un personnage à 100 en STR il inflige donc 100 de dégât.
+
+Le round démarre :
+
+1 . Comparaison des deux vitesses > Détermine qui commence
+2 . L'attaquant à <Intelligence> % de d'infliger des dégâts lié à la puissance !
+    - Si le jet foire, rien ne se passe, rien n'apparait dans le log, on passe au point 3.
+    - Si le jet réussi, le défenseur fait son jet d'esquive.
+		- Si le défenseur échoue, il se prend en dégât le niveau de puissance adverse.
+		- Si le défenseur réussi, il esquive le sort !
+
+3 . L'attaquant attaque avec COMBAT !
+    - Si le jet foire, l'attaquant rate son attaque.
+    - Si le jet réussi, le défenseur à droit à une autre esquive.
+		- Si le défenseur échoue, il se prend en dégât le montant de Force adverse.
+		- Si le défenseur réussi, il esquive le coup !
+
+4. Fin du tour de l'attaquant, celui-ci passe en défenseur et inversement pour son adversaire. 
+(Reboucle jusqu'au moment où l'un des deux voit sa durabilité tomber à 0 ou moins.
