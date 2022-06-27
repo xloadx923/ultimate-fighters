@@ -12,7 +12,7 @@
     --second-gb: rgb(0, 19, 128);
     --superWhite: white;
     --principal-color: rgb(185, 177, 120);
-    --first-gradient: rgb(175 4 0);
+    --first-gradient: rgb(182, 61, 59);
     --second-gradient: rgb(14 95 139);
     --black-75: rgb(0, 0, 0, .75);
     --borderText: rgb(255 183 150);
@@ -99,23 +99,21 @@ body{
     padding-top: 20px;
 }
 
-.nameFighter {
-    display: flex;
-    justify-content: center;
+.firstFighter, .secondFighter {
+    grid-row: 2 / 4 ;
+    cursor: pointer;
+    width: 240px;
+    height: 320px;
+    background-position-x: center;
+    background-position-y: center;
 }
 
 .firstFighter {
     justify-self: center;
     grid-column: 2;
-    grid-row: 2 / 4 ;
-    width: 240px;
-    height: 320px;
-    border: var(--first-gradient) 3px solid;
+    border: var(--first-gradient) 5px solid;
     border-radius: 25px 0 0 25px;
     background:url(/img/fighter1.gif);
-    background-position-x: center;
-    background-position-y: center;
-    cursor: pointer;
 }
 .firstFighter h3, .secondFighter h3{
     background: rgb(0,0,0,.5);
@@ -123,20 +121,25 @@ body{
     color: white;
     height: 23px;
 }
+
 .firstFighter h3{ border-radius:  27px 0 0 0; }
-.secondFighter h3{ border-radius: 0 27px 0 0; }
 .secondFighter {
-    justify-self: center;
     grid-column: 3;
-    grid-row: 2 / 4 ;
-    cursor: pointer;
-    width: 240px;
-    height: 320px;
     border: rgb(107, 133, 219) 5px solid;
     border-radius: 0 25px 25px 0;
     background:url(/img/fighter2.gif);
-    background-position-x: center;
-    background-position-y: center;
+}
+.secondFighter h3{ border-radius: 0 27px 0 0; }
+
+.lifeBar{
+    width: 100%;
+    height: 15px;
+    background-color: white;
+}
+.progressBar{
+    width: 100%;
+    height: 100%;
+    background-color: green;
 }
 
 .logCombat {

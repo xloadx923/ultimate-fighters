@@ -57,9 +57,22 @@ function fight(heroes){
         localStorage.setItem('defenser','');
     }
 
-    document.querySelector('.combatScene1 .valueStat.life').innerText = heroes.fighter1.powerstats.life;
-    document.querySelector('.combatScene2 .valueStat.life').innerText = heroes.fighter2.powerstats.life;
+    document.querySelector('.firstFighter .lifeBar .progressBar').style.width   =  pourcent()[0]+"%";
+    document.querySelector('.secondFighter .lifeBar .progressBar').style.width  =  pourcent()[1]+"%";
 
+}
+
+function pourcent(){
+    let pourcent1 = Math.round((heroes.fighter1.powerstats.life / localStorage.getItem('attackerTotal')) * 100);
+    let pourcent2 = Math.round((heroes.fighter2.powerstats.life / localStorage.getItem('defenserTotal')) * 100);
+ 
+    if(pourcent1 < 0){
+        pourcent1 = 0;
+    }
+    if(pourcent2 < 0){
+        pourcent2 = 0;
+    }
+    return [pourcent1, pourcent2];
 }
 
 function battle(hero)
@@ -72,7 +85,7 @@ function battle(hero)
 
         heroes.fighter2 = hero;
         console.log("Démarrage du combat entre " + heroes.fighter1.name + " et " +  heroes.fighter2.name);
-        interval =  setInterval(function(){ fight(heroes) }, 500);
+        interval =  setInterval(function(){ fight(heroes) }, 1500);
 
     }
 }

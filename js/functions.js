@@ -116,11 +116,13 @@ function displayHeroes(todoList){
                 displayFighter('.firstFighter',hero);
                 displayStats('.combatScene1',hero,false);
                 localStorage.setItem('attacker', hero.id);
+                localStorage.setItem('attackerTotal', hero.powerstats.life);
             }
             else if(document.getElementById('fighter2').checked){
                 displayFighter('.secondFighter',hero);
                 displayStats('.combatScene2',hero,false);
                 localStorage.setItem('defenser', hero.id);
+                localStorage.setItem('defenserTotal', hero.powerstats.life);
             }
         });
 
