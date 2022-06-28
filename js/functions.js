@@ -88,8 +88,8 @@ function displayStats(nameDetail,hero,valid){
 function displayHeroes(todoList){
     todoList.forEach(hero => {
         hero.powerstats.life = hero.powerstats.durability * 10;
-        hero.powerstats.shield = getRandomNumber(10,20)+20;
-        hero.powerstats.weapon = getRandomNumber(10,20);
+        hero.powerstats.Dodge = hero.powerstats.speed / 4;
+        hero.powerstats.Spell_chance = hero.powerstats.intelligence / 2
 
         const result = (hero.biography.publisher === null) ? 'Unknown universe' : hero.biography.publisher.trim();
         universe.push(result); // Traitement des univers inconnus
