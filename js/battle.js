@@ -52,9 +52,11 @@ function fight(heroes){
         textCombat.innerHTML += '<p style="width: 100%;color:yellow;">Exaequo !!!!!</p>';
     }
     if(heroes.fighter1.powerstats.life <= 0 || heroes.fighter2.powerstats.life <= 0){
-        clearInterval(interval);
+        // Remove Fighters
         localStorage.removeItem('attacker');
         localStorage.removeItem('defenser');
+        // Stop Interval
+        clearInterval(interval);
     }
 
     document.querySelector('.firstFighter .lifeBar .progressBar').style.width   =  pourcent()[0]+"%";
