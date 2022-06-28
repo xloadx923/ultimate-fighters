@@ -113,6 +113,7 @@ body{
     border: var(--first-gradient) 5px solid;
     border-radius: 25px 0 0 25px;
     background:url(/img/fighter1.gif);
+    background-position: 50% 50%;
 }
 .firstFighter h3, .secondFighter h3{
     background: rgb(0,0,0,.5);
@@ -127,6 +128,7 @@ body{
     border: rgb(107, 133, 219) 5px solid;
     border-radius: 0 25px 25px 0;
     background:url(/img/fighter2.gif);
+    background-position: 50% 50%;
 }
 .secondFighter h3{ border-radius: 0 27px 0 0; }
 
