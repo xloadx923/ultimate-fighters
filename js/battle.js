@@ -74,7 +74,6 @@ function pourcent(){
 
 function battle(hero)
 {
-
     if( hero.id === parseInt(localStorage.getItem("attacker")) ){
         heroes.fighter1 = hero;
     }
