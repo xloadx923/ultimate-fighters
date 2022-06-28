@@ -59,12 +59,13 @@ function fight(heroes){
         clearInterval(interval);
     }
 
+    // Display in real time progressBar
     document.querySelector('.firstFighter .lifeBar .progressBar').style.width   =  pourcent()[0]+"%";
     document.querySelector('.secondFighter .lifeBar .progressBar').style.width  =  pourcent()[1]+"%";
-
+    // Update Dom life text
     document.querySelector('.combatScene1 .valueStat.life').innerText = heroes.fighter1.powerstats.life;
     document.querySelector('.combatScene2 .valueStat.life').innerText = heroes.fighter2.powerstats.life;
-    
+    // Verify if dead
     if(heroes.fighter1.powerstats.life <= 0){ document.querySelector('.firstFighter').style = 'background: url(../img/dead-head.gif) center no-repeat;background-size: 240px 320px;'; }
     if(heroes.fighter2.powerstats.life <= 0){ document.querySelector('.secondFighter').style = 'background: url(../img/dead-head.gif) center no-repeat;background-size: 240px 320px;'; }
 
