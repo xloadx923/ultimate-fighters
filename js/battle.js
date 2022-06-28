@@ -24,6 +24,7 @@ function setRound(a,b,c,d){
 let interval,attackerFight, defenserFight, attackerLife, defenserLife, winner, loser;
 
 function fight(heroes){
+    // Combat formula
     attackerFight = heroes.fighter1.powerstats.intelligence +
                     getRandomNumber(0, heroes.fighter1.powerstats.weapon) +
                     heroes.fighter1.powerstats.strength;
@@ -31,7 +32,7 @@ function fight(heroes){
     defenserFight = heroes.fighter2.powerstats.intelligence +
                     getRandomNumber(0, heroes.fighter2.powerstats.shield)+
                     heroes.fighter2.powerstats.strength;
-
+    // decrement hero life
     if(attackerFight > defenserFight && defenserFight > 0) {
         heroes.fighter2.powerstats.life -= attackerFight;
         winner = heroes.fighter1;
@@ -42,9 +43,9 @@ function fight(heroes){
         winner = heroes.fighter2;
         loser = heroes.fighter1;
     }
-
+    // Round display
     if(heroes.fighter1.powerstats.life > 0 || heroes.fighter2.powerstats.life > 0){ setRound(heroes.fighter1.powerstats.life,attackerFight,heroes.fighter2.powerstats.life,defenserFight); }
-
+    // Combat final result
     if(heroes.fighter1.powerstats.life <= 0 && heroes.fighter1.powerstats.life !== heroes.fighter2.powerstats.life)      { setResultRound(winner.name, loser.name); }
     else if(heroes.fighter2.powerstats.life <= 0 && heroes.fighter1.powerstats.life !== heroes.fighter2.powerstats.life) { setResultRound(winner.name, loser.name); }
     else if(heroes.fighter1.powerstats.life === heroes.fighter2.powerstats.life) {
@@ -70,7 +71,7 @@ function fight(heroes){
     if(heroes.fighter2.powerstats.life <= 0){ document.querySelector('.secondFighter').style = 'background: url(../img/dead-head.gif) center no-repeat;background-size: 240px 320px;'; }
 
 }
-
+// Calculate pourcent
 function pourcent(){
     let pourcent1 = Math.round((heroes.fighter1.powerstats.life / localStorage.getItem('attackerTotal')) * 100);
     let pourcent2 = Math.round((heroes.fighter2.powerstats.life / localStorage.getItem('defenserTotal')) * 100);
@@ -80,7 +81,7 @@ function pourcent(){
 
     return [pourcent1, pourcent2];
 }
-
+// Battlefield
 function battle(hero)
 {
     if( hero.id === parseInt(localStorage.getItem("attacker")) ){
