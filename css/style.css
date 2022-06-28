@@ -41,9 +41,7 @@ body{
     width: 100vw;
     height: 100vh;
 }
-/* .allDetails.display{
-    display: flex;
-} */
+
 .textDetails{
     width: 50%;
     height: auto;
