@@ -228,28 +228,26 @@ body{
 /* The fight button */
 
 .btnFight {
-    background-image: url(../img/fight_button.png);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    background-position: center;
-    width: 115%;
-    margin-left: 75px;
-    padding: 21%;
-    text-align: center;
     align-items: center;
-    justify-content: center;
-    grid-column: 3 / span 1;
+    justify-self: center;
+    grid-column: 4;
     grid-row: 4;
 }
-/* .btnFight button{
+.btnFight button{
     padding: 5px 20px;
     font-size: 2rem;
     border-radius: 25px;
-    color: white;
-    border: solid white 1px;
-    background: linear-gradient(0.25turn, var(--first-gradient), var(--second-gradient));
-} */
+    color: rgba(255, 255, 255, 0);
+    background: url(../img/fight_button.png)center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 
+.btnFight, .btnFight button {
+    border-radius:25px;
+    width: 170px;
+    height:95px
+}
 .btnFight button:hover{
     background: linear-gradient(0.25turn, rgb(224, 192, 192), rgb(159, 171, 209));
 }
