@@ -127,22 +127,3 @@ function listenHeroes(heroDetail, hero){
     });
 
 }
-// function listenHeroes(heroDetail, hero){
-//     heroDetail.addEventListener('click',function(event){
-//     console.log('Look at them')
-//     if(!localStorage.getItem('attacker')){
-//             console.log('Look at 1')
-//             displayFighter('.firstFighter',hero);
-//             displayStats('.combatScene1',hero,false);
-//             localStorage.setItem('attacker', hero.id);
-//             localStorage.setItem('attackerTotal', hero.powerstats.life);
-//         }
-//         else if(!localStorage.getItem('defenser')){
-//             console.log('Look at 2')
-//             displayFighter('.secondFighter',hero);
-//             displayStats('.combatScene2',hero,false);
-//             localStorage.setItem('defenser', hero.id);
-//             localStorage.setItem('defenserTotal', hero.powerstats.life);
-//         }
-//     });
-// }
