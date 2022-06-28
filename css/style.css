@@ -12,7 +12,7 @@
     --second-gb: rgb(0, 19, 128);
     --superWhite: white;
     --principal-color: rgb(185, 177, 120);
-    --first-gradient: rgb(254 154 50);
+    --first-gradient: rgb(255, 50, 50);
     --second-gradient: rgb(68 135 255);
     --black-75: rgb(0, 0, 0, .75);
     --borderText: rgb(0 0 0);
@@ -231,7 +231,6 @@ body{
 }
 /* The fight button */
 .btnFight, .btnFight button{
-    background: var(--second-gradient);
     border-radius: 25px;
     width: 150px;
     height: 40px;
