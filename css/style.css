@@ -12,10 +12,15 @@
     --second-gb: rgb(0, 19, 128);
     --superWhite: white;
     --principal-color: rgb(185, 177, 120);
+<<<<<<< HEAD
     --first-gradient: rgb(207, 107, 106);
     --second-gradient: rgb(14 95 139);
+=======
+    --first-gradient: rgb(254 154 50);
+    --second-gradient: rgb(68 135 255);
+>>>>>>> 3296fbe6afe0a24715ada07417a86346d6aa8f05
     --black-75: rgb(0, 0, 0, .75);
-    --borderText: rgb(255 183 150);
+    --borderText: rgb(0 0 0);
     --formula-color: rgb(212, 212, 119);
 }
 
@@ -244,12 +249,25 @@ body{
 }
 .btnFight button{
     font-size: 2rem;
+<<<<<<< HEAD
     border: solid var(--first-gradient) 1px;
     /* background: linear-gradient(0.25turn, var(--first-gradient), var(--second-gradient)); */
     background: url(../img/fight_button.png) center no-repeat;
     background-size: 50%;
+=======
+    border-radius: 25px;
+    color: rgba(255, 255, 255, 0);
+    background: url(../img/fight_button.png)center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+>>>>>>> 3296fbe6afe0a24715ada07417a86346d6aa8f05
 }
 
+.btnFight, .btnFight button {
+    border-radius:25px;
+    width: 170px;
+    height:95px
+}
 .btnFight button:hover{
     opacity: 0.7;
 }
