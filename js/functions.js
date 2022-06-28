@@ -108,26 +108,28 @@ function displayHeroes(todoList){
 
         changeFighter();
         closeStats();
-
-        let buttonBefore1 = undefined, buttonBefore2 = undefined;
-
-        heroDetail.addEventListener('click',function(){
-            if(document.getElementById('fighter1').checked){
-                displayFighter('.firstFighter',hero);
-                displayStats('.combatScene1',hero,false);
-                localStorage.setItem('attacker', hero.id);
-                localStorage.setItem('attackerTotal', hero.powerstats.life);
-            }
-            else if(document.getElementById('fighter2').checked){
-                displayFighter('.secondFighter',hero);
-                displayStats('.combatScene2',hero,false);
-                localStorage.setItem('defenser', hero.id);
-                localStorage.setItem('defenserTotal', hero.powerstats.life);
-            }
-        });
-
+        listenHeroes(heroDetail, hero);
+        
         document.querySelector('#buttonFight').addEventListener('click', function() { battle(hero); });
     });
 
     displayUniverse();
+}
+
+function listenHeroes(heroDetail, hero){
+    heroDetail.addEventListener('click',function(){
+        if(document.getElementById('fighter1').checked){
+            displayFighter('.firstFighter',hero);
+            displayStats('.combatScene1',hero,false);
+            localStorage.setItem('attacker', hero.id);
+            localStorage.setItem('attackerTotal', hero.powerstats.life);
+        }
+        else if(document.getElementById('fighter2').checked){
+            displayFighter('.secondFighter',hero);
+            displayStats('.combatScene2',hero,false);
+            localStorage.setItem('defenser', hero.id);
+            localStorage.setItem('defenserTotal', hero.powerstats.life);
+        }
+    });
+
 }
