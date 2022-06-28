@@ -301,6 +301,7 @@ body{
     justify-content: space-around;
     color: var(--first-gradient);
     background-color: var(--black-75);
+    margin-top: 10px;
 }
 .filter{
     text-align: center;
