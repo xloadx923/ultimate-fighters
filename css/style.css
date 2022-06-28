@@ -238,6 +238,7 @@ body{
     grid-row: 4;
 }
 .btnFight button{
+    border: none;
     background: url(../img/fight_button.png)center;
     background-repeat: no-repeat;
     background-size: 100%;
@@ -287,6 +288,7 @@ body{
 /*********** Filter session ***********/
 .containerFilter{
     width: 100%;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
