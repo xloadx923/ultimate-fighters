@@ -8,12 +8,8 @@ function getRandomNumber(min, max){
 
 /********** Fighters choice ********************************/
 function changeFighter(){
-    document.getElementById('fighter1').addEventListener('change',function(){
-        if(this.checked) document.getElementById('fighter2').checked = false;
-    });
-    document.getElementById('fighter2').addEventListener('change',function(){
-        if(this.checked) document.getElementById('fighter1').checked = false;
-    });
+    document.getElementById('fighter1').addEventListener('change',function(){ if(this.checked) document.getElementById('fighter2').checked = false; });
+    document.getElementById('fighter2').addEventListener('change',function(){ if(this.checked) document.getElementById('fighter1').checked = false; });
 }
 /*********** Universe choice ******************************/
 function changeUniverse(){
@@ -24,9 +20,7 @@ function changeUniverse(){
 }
 /*********** Close modal Caractristic *********************/
 function closeStats(){
-    document.querySelector('.allDetails').addEventListener('click',function(){
-        this.style.display = 'none';
-    });
+    document.querySelector('.allDetails').addEventListener('click',function(){ this.style.display = 'none'; });
 }
 /*********** Display fighters *****************************/
 function displayFighter(fighter,hero){
@@ -67,7 +61,7 @@ function displayStats(nameDetail,hero,valid){
     Object.getOwnPropertyNames(hero.powerstats).forEach(title => { statistics.push(title); });
     Object.getOwnPropertyNames(hero.biography) .forEach(title => { caractristics.push(title); });
     Object.getOwnPropertyNames(hero.appearance).forEach(title => { caractristics.push(title); });
-
+    // Valid for modal
     if(valid){
         stats.innerHTML += `<div class="imageStat"><img src="${hero.images.sm}"></div>`;
         Object.values(hero.biography).forEach(function (value, key) {
@@ -109,22 +103,42 @@ function displayHeroes(todoList){
         changeFighter();
         closeStats();
         listenHeroes(heroDetail, hero);
-        
+        // Launch the battle
         document.querySelector('#buttonFight').addEventListener('click', function() { battle(hero); });
     });
 
     displayUniverse();
 }
 
+// function listenHeroes(heroDetail, hero){
+//     heroDetail.addEventListener('click',function(){
+//         if(document.getElementById('fighter1').checked){
+//             displayFighter('.firstFighter',hero);
+//             displayStats('.combatScene1',hero,false);
+//             localStorage.setItem('attacker', hero.id);
+//             localStorage.setItem('attackerTotal', hero.powerstats.life);
+//         }
+//         else if(document.getElementById('fighter2').checked){
+//             displayFighter('.secondFighter',hero);
+//             displayStats('.combatScene2',hero,false);
+//             localStorage.setItem('defenser', hero.id);
+//             localStorage.setItem('defenserTotal', hero.powerstats.life);
+//         }
+//     });
+
+// }
 function listenHeroes(heroDetail, hero){
-    heroDetail.addEventListener('click',function(){
-        if(document.getElementById('fighter1').checked){
+    heroDetail.addEventListener('click',function(event){
+    console.log('Look at them')
+    if(!localStorage.getItem('attacker')){
+            console.log('Look at 1')
             displayFighter('.firstFighter',hero);
             displayStats('.combatScene1',hero,false);
             localStorage.setItem('attacker', hero.id);
             localStorage.setItem('attackerTotal', hero.powerstats.life);
         }
-        else if(document.getElementById('fighter2').checked){
+        else if(!localStorage.getItem('defenser')){
+            console.log('Look at 2')
             displayFighter('.secondFighter',hero);
             displayStats('.combatScene2',hero,false);
             localStorage.setItem('defenser', hero.id);

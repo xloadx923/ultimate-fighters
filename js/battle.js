@@ -53,8 +53,8 @@ function fight(heroes){
     }
     if(heroes.fighter1.powerstats.life <= 0 || heroes.fighter2.powerstats.life <= 0){
         clearInterval(interval);
-        localStorage.setItem('attacker','');
-        localStorage.setItem('defenser','');
+        localStorage.removeItem('attacker');
+        localStorage.removeItem('defenser');
     }
 
     document.querySelector('.firstFighter .lifeBar .progressBar').style.width   =  pourcent()[0]+"%";

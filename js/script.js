@@ -1,4 +1,5 @@
 const heroes = [];
+const fighters = [];
 const universe = [];
 
 async function waitingForResponse() {
