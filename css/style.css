@@ -69,11 +69,10 @@ body{
 
 .title {
     display: flex;
-    align-self: center;
+    align-items: center;
     justify-content: center;
     background-color: var(--main-gb);
     color: var(--superWhite);
-    padding: 2rem;
     height: 95px;
     opacity: 0.5;
 

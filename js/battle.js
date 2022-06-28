@@ -66,12 +66,9 @@ function pourcent(){
     let pourcent1 = Math.round((heroes.fighter1.powerstats.life / localStorage.getItem('attackerTotal')) * 100);
     let pourcent2 = Math.round((heroes.fighter2.powerstats.life / localStorage.getItem('defenserTotal')) * 100);
 
-    if(pourcent1 < 0){
-        pourcent1 = 0;
-    }
-    if(pourcent2 < 0){
-        pourcent2 = 0;
-    }
+    if(pourcent1 < 0){ pourcent1 = 0; }
+    if(pourcent2 < 0){ pourcent2 = 0; }
+
     return [pourcent1, pourcent2];
 }
 
